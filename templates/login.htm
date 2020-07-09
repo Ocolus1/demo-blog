@@ -1,0 +1,19 @@
+{% extends "layout.htm" %}
+
+
+{% block body%}
+    <h1>Login</h1>
+    <form method="post" action="">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="john_doe">
+            <small class="form-text text-muted">Enter your username here.</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder=".......">
+            <small class="form-text text-muted">Enter your password here.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+{% endblock %}

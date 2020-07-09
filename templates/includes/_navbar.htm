@@ -1,0 +1,66 @@
+<style>
+  /* Media Queries */
+  @media screen and (max-width: 992px) {
+      #navbar-brand {
+          color: green;
+      }
+  }
+  @media screen and (max-width: 768px) {
+      #navbar-brand {
+          color: blue;
+      }
+  }
+  @media screen and (max-width: 576px) {
+      #navbar-brand {
+          color: yellow;
+      }
+      .navbar-bttn {
+        display: block;
+      }
+
+  }
+</style>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="/" id="navbar-brand">Pawo Industries</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/articles">Articles</a>
+      </li>
+    </ul>
+
+    {% if session.logged_in %}
+    <a href="/dashboard" class="navbar-bttn" >
+      <button type="button" class="btn btn-white bg-transparent text-muted">
+          Dashboard
+      </button>
+    </a>
+    <a href="/logout" class="navbar-bttn" >
+      <button type="button" class="btn btn-white bg-transparent text-muted">
+          Logout
+      </button>
+    </a>
+    {% else %}
+    <a href="/register"  class="navbar-bttn">
+      <button type="button" class="btn btn-white bg-transparent text-muted">
+          Register
+      </button>
+    </a>
+    <a href="/login" class="navbar-bttn" >
+      <button type="button" class="btn btn-white bg-transparent text-muted">
+          Login
+      </button>
+    </a>
+    {% endif %}
+  </div>
+</nav>

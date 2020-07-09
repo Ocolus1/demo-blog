@@ -1,0 +1,3 @@
+added class "navbar-txt" the buttons in the _navbar.htm 
+ALTER TABLE `article` CHANGE `created_date` `created_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+to fix the current timestamp on mysql database just insert "set global explicit_defaults_for_timestamp='OFF';"

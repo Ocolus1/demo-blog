@@ -1,0 +1,17 @@
+{% extends "layout.htm" %}
+
+
+{% block body%}
+    <h1>Add Articles</h1>
+    <form method="post" action="">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="This is my title">
+        </div>
+        <div class="form-group">
+            <label for="body">Body</label>
+            <textarea name="body" class="form-control" id="body" minlength="30" placeholder="..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

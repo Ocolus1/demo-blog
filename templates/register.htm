@@ -1,0 +1,35 @@
+{% extends "layout.htm" %}
+
+
+{% block body%}
+    <h1>REGISTER</h1>
+    <form method="post" action="">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="John Doe">
+            <small class="form-text text-muted">Enter your fullname here.</small>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="johndoe@gmail.com">
+            <small class="form-text text-muted">Enter your email address here.</small>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="john_doe">
+            <small class="form-text text-muted">Enter your username here.</small>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder=".......">
+            <small class="form-text text-muted">Enter your password here.</small>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confrim Password</label>
+            <input type="password" class="form-control" name="confirm_password" id="confirm_password"
+                   placeholder=".......">
+            <small class="form-text text-muted">Retype your password here.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

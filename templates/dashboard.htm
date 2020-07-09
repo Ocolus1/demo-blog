@@ -1,0 +1,98 @@
+{% extends "layout.htm" %}
+
+<style type="text/css">
+    /* Media Queries */
+
+    @media screen and (max-width: 768px) {
+
+        #table {
+            width: 100%;
+            display: block;
+        }
+
+        .tb-head,
+        .tb-row {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .tb-head {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #table tr:hover {
+            background-color: #ddd;
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+
+        #table {
+            width: 100%;
+            display: block;
+        }
+
+        .tb-head,
+        .tb-row {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .tb-head {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #table tr:hover {
+            background-color: #ddd;
+        }
+
+    }
+</style>
+
+{% block body%}
+<h1>Dashboard, <small>Welcome {{ session.username }}</small></h1>
+<a class="btn btn-success" href="add_article">Add Article</a>
+<hr />
+<table class="" id="table">
+    <tr class="tab-row">
+        <th class="tb-head">Id</th>
+        <th class="tb-head">Title</th>
+        <th class="tb-head">Author</th>
+        <th class="tb-head">Date</th>
+        <th class="tb-head"></th>
+        <th class="tb-head"></th>
+    </tr>
+    {% for art in arts %}
+    <tr class="tb-row">
+        <td>{{ art.id }}</td>
+        <td>{{ art.title }}</td>
+        <td>{{ art.author }}</td>
+        <td>{{ art.created_date }}</td>
+        <td><a href="/edit_article/{{art.id}}" class="btn btn-success pull-right">Edit</a></td>
+        <td>
+            <form action="{{url_for('delete_article', id=art.id)}}" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="Delete" class="btn btn-danger">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock%}
